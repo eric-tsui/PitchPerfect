@@ -39,12 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HYf-1E-Tei" firstAttribute="top" secondItem="Wbo-2D-jSd" secondAttribute="bottom" constant="46" id="1zK-gz-pyU"/>
-                            <constraint firstItem="Wbo-2D-jSd" firstAttribute="top" secondItem="usV-uB-Qec" secondAttribute="bottom" constant="45.5" id="7hh-8h-ync"/>
+                            <constraint firstItem="Wbo-2D-jSd" firstAttribute="top" secondItem="usV-uB-Qec" secondAttribute="bottom" constant="18" id="7hh-8h-ync"/>
                             <constraint firstItem="usV-uB-Qec" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EQh-Ds-BHA"/>
                             <constraint firstItem="Wbo-2D-jSd" firstAttribute="centerX" secondItem="usV-uB-Qec" secondAttribute="centerX" id="QrO-wd-B0b"/>
                             <constraint firstItem="usV-uB-Qec" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="agS-ix-zRU"/>
                             <constraint firstItem="HYf-1E-Tei" firstAttribute="centerX" secondItem="Wbo-2D-jSd" secondAttribute="centerX" id="asV-fE-7Hx"/>
+                            <constraint firstItem="HYf-1E-Tei" firstAttribute="top" secondItem="Wbo-2D-jSd" secondAttribute="bottom" constant="30" id="qYb-mc-Qaa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tWH-cu-RhT"/>
