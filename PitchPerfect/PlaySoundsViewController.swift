@@ -19,6 +19,12 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var reverbButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
+    @IBOutlet weak var outerStackView: UIStackView!
+    @IBOutlet weak var innerStackView1: UIStackView!
+    @IBOutlet weak var innerStackView2: UIStackView!
+    @IBOutlet weak var innerStackView3: UIStackView!
+    @IBOutlet weak var innerStackView4: UIStackView!
+    
     var recordedAudioURL:URL!
     var audioFile:AVAudioFile!
     var audioEngine:AVAudioEngine!
@@ -72,14 +78,31 @@ class PlaySoundsViewController: UIViewController {
         configureUI(.notPlaying)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+      
+        coordinator.animate(alongsideTransition: {
+            (context) -> Void in
+            let currentOrientation = UIApplication.shared.statusBarOrientation
+            self.setStacksViewAxis(orientation: currentOrientation)
+        }, completion: nil)
+        
     }
-    */
+    
+    private func setStacksViewAxis(orientation: UIInterfaceOrientation) {
+        
+        var outerAxisStyle, innerAxisstyle : UILayoutConstraintAxis
+        
+        if orientation.isPortrait{
+            (outerAxisStyle, innerAxisstyle) = (.vertical, .horizontal)
+        }else{
+            (outerAxisStyle, innerAxisstyle) = (.horizontal, .vertical)
+        }
+        
+        outerStackView.axis = outerAxisStyle
+        let innerStacks = [innerStackView1, innerStackView2, innerStackView3, innerStackView4]
+        for stack in innerStacks {
+            stack!.axis = innerAxisstyle
+        }
+    }
 
 }
