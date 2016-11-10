@@ -67,14 +67,14 @@ class PlaySoundsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupAudio()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // UI display adapter
+        setStacksViewAxis(orientation: UIApplication.shared.statusBarOrientation)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         configureUI(.notPlaying)
     }
 
@@ -88,6 +88,7 @@ class PlaySoundsViewController: UIViewController {
         
     }
     
+    //Adjust UI according to the orientation, to avoid squashed display in landscape mode
     private func setStacksViewAxis(orientation: UIInterfaceOrientation) {
         
         var outerAxisStyle, innerAxisstyle : UILayoutConstraintAxis

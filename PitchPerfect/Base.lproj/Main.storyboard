@@ -19,32 +19,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usV-uB-Qec">
-                                <state key="normal" image="recordButtonPic"/>
-                                <connections>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YSr-Hq-St0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-1E-Tei">
-                                <state key="normal" image="stopButtonPic"/>
-                                <connections>
-                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TAS-5x-wmr"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-2D-jSd">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-dY-0l3">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfM-Rf-ReC"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dfM-cx-BOk">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usV-uB-Qec">
+                                                <state key="normal" image="recordButtonPic"/>
+                                                <connections>
+                                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YSr-Hq-St0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gd6-0t-U1C">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-2D-jSd">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PAZ-6d-TAh">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-1E-Tei">
+                                                <state key="normal" image="stopButtonPic"/>
+                                                <connections>
+                                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TAS-5x-wmr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwZ-Tb-M8O"/>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Wbo-2D-jSd" firstAttribute="top" secondItem="usV-uB-Qec" secondAttribute="bottom" constant="18" id="7hh-8h-ync"/>
-                            <constraint firstItem="usV-uB-Qec" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EQh-Ds-BHA"/>
-                            <constraint firstItem="Wbo-2D-jSd" firstAttribute="centerX" secondItem="usV-uB-Qec" secondAttribute="centerX" id="QrO-wd-B0b"/>
-                            <constraint firstItem="usV-uB-Qec" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="agS-ix-zRU"/>
-                            <constraint firstItem="HYf-1E-Tei" firstAttribute="centerX" secondItem="Wbo-2D-jSd" secondAttribute="centerX" id="asV-fE-7Hx"/>
-                            <constraint firstItem="HYf-1E-Tei" firstAttribute="top" secondItem="Wbo-2D-jSd" secondAttribute="bottom" constant="30" id="qYb-mc-Qaa"/>
+                            <constraint firstItem="d0L-dY-0l3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2JY-xm-mml"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d0L-dY-0l3" secondAttribute="bottom" id="UPv-ud-P2c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d0L-dY-0l3" secondAttribute="trailing" id="lOz-eo-pnY"/>
+                            <constraint firstItem="d0L-dY-0l3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="w70-aB-DGT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tWH-cu-RhT"/>

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundsViewController.swift
 //  PitchPerfect
 //
 //  Created by EricTsui on 4/11/16.
@@ -58,6 +58,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         stopRecordingButton.isEnabled = false
     }
 
